@@ -65,6 +65,7 @@ namespace GestoreEventi
             this.capienzaMassima = capienzaMassima;
             postiPrenotati = 0;
         }
+        
 
         public void PrenotaPosti(int postiDaPrenotare)
         {
