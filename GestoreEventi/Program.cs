@@ -76,7 +76,7 @@ Console.ReadKey();
 Console.WriteLine("Inserisci il titolo del tuo programma eventi:");
 string Titolo = Console.ReadLine();
 
-ProgrammaEventi programmaEventi = new ProgrammaEventi(titolo);
+ProgrammaEventi programmaEventi = new ProgrammaEventi(Titolo);
 
 Console.WriteLine("Quanti eventi vuoi aggiungere?");
 int numeroEventi = int.Parse(Console.ReadLine());
@@ -89,7 +89,7 @@ for (int i = 0; i < numeroEventi; i++)
     Console.WriteLine($"Inserisci la data dell'evento {i + 1} (formato gg/mm/aaaa):");
     DateTime dataEvento = DateTime.Parse(Console.ReadLine());
 
-    Evento evento2 = new Evento("nomeEvento", DateTime.Now, 10);
+    Evento evento2 = new Evento(titolo, DateTime.Now, 10);
 
     try
     {
