@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace GestoreEventi
 {
+    //Creiamo la classe evento con i suoi attributi
     public class Evento
     {
         private string titolo;
@@ -13,7 +14,11 @@ namespace GestoreEventi
         private int capienzaMassima;
         private int postiPrenotati;
 
+        //Utilizziamo i getter e setter  per fare in modo che alcuni attributi siano disponibili in lettura e scrittura ed altri solo sollo lettura
+
         public string Titolo
+
+            //nei get mettiamo le exception
         {
             get { return titolo; }
             set
