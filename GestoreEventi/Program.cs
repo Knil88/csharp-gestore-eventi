@@ -70,3 +70,48 @@ while (true)
 Console.ReadKey();
 
 
+
+
+
+Console.WriteLine("Inserisci il titolo del tuo programma eventi:");
+string Titolo = Console.ReadLine();
+
+ProgrammaEventi programmaEventi = new ProgrammaEventi(titolo);
+
+Console.WriteLine("Quanti eventi vuoi aggiungere?");
+int numeroEventi = int.Parse(Console.ReadLine());
+
+for (int i = 0; i < numeroEventi; i++)
+{
+    Console.WriteLine($"Inserisci il titolo dell'evento {i + 1}:");
+    string titoloEvento = Console.ReadLine();
+
+    Console.WriteLine($"Inserisci la data dell'evento {i + 1} (formato gg/mm/aaaa):");
+    DateTime dataEvento = DateTime.Parse(Console.ReadLine());
+
+    Evento evento2 = new Evento("nomeEvento", DateTime.Now, 10);
+
+    try
+    {
+        programmaEventi.AggiungiEvento(evento2);
+        Console.WriteLine($"Evento {titoloEvento} aggiunto con successo!");
+    }
+    catch (Exception e)
+    {
+        Console.WriteLine($"Errore: {e.Message}");
+        i--;
+    }
+}
+
+Console.WriteLine($"Numero di eventi presenti nel programma: {programmaEventi.NumeroEventi()}\n");
+
+Console.WriteLine("Lista di eventi inseriti nel programma:");
+Console.WriteLine(ProgrammaEventi.StampaEventi(programmaEventi.Eventi));
+
+Console.WriteLine("Inserisci una data per visualizzare gli eventi in quella data (formato gg/mm/aaaa):");
+DateTime dataCercata = DateTime.Parse(Console.ReadLine());
+
+Console.WriteLine($"Eventi in data {dataCercata}:");
+Console.WriteLine(ProgrammaEventi.StampaEventi(programmaEventi.EventiInData(dataCercata)));
+
+programmaEventi.SvuotaEventi();
